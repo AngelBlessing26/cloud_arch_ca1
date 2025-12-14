@@ -1,0 +1,14 @@
+This project will display a simple cloud hosted web serive on mircosoft azure usimg Iaas components.
+The system consists of:
+- An Azure Resource Group (ca1_rg)
+- A Virtual Network and Subnet
+- A Linux Virtual Machine
+- A public IP address
+- An Apache web server installed via cloud-init
+
+The VM hosts a HTML page that displays:
+"CA1 Cloud Architecture" and
+"Successfully completed by Angel Ileogben CA 1"
+formatted in bold and underlined.
+
+The environment is created and destroyed using PowerShell scripts.
