@@ -1,3 +1,20 @@
 #cloud-config
 packages:
   - nginx
+write_files:
+  - path: /var/www/html/index.html
+    permissions: '0644'
+    content: |
+      <!DOCTYPE html>
+      <html>
+      <head>
+          <title>CA1 Cloud Architecture</title>
+      </head>
+      <body>
+          <h1><b><u>CA1 CLOUD ARCHITECTURE</u></b></h1>
+          <h2><b><u>SUCCESSFULLY COMPLETED BY ANGEL ILEOGBEN CA 1</u></b></h2>
+      </body>
+      </html>
+runcmd:
+  - systemctl enable apache2
+  - systemctl restart apache2
