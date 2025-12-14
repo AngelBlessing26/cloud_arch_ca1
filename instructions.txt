@@ -1,20 +1,35 @@
-1. Ensure Azure CLI is installed and you are logged in:
-   az login
+Before starting, make sure the Azure CLI is installed and that you are signed in to your Azure account.
 
-2. Run the setup script:
-   ./setup.ps1
+Open PowerShell or a terminal in the project folder and sign in by running:
 
-3. Wait for the VM deployment to complete.
+az login
 
-4. Retrieve the public IP:
-   az vm show -d -g ca1_rg -n ca1VM --query publicIps -o tsv
+Once logged in, run the setup script:
 
-5. Open a browser and navigate to:
-   http://<public-ip>
+./setup.ps1
 
-6. Confirm the webpage displays:
-   CA1 CLOUD ARCHITECTURE
-   SUCCESSFULLY COMPLETED BY ANGEL ILEOGBEN CA 1
+The script will automatically create the resource group, virtual machine and networking resources. 
+The virtual machine uses cloud-init, so Apache or Ngnix and the web page are installed during the first startup.
+This may take a few minutes.
 
-7. For teardown, run:
-   ./teardown.ps1
+After the script finishes, go to the Azure Portal.
+
+In the portal:
+- Open the resource group called ca1_rg
+- Click on the virtual machine named ca1VM
+- Copy the Public IP address shown on the overview page
+
+Open a web browser and paste the public IP address into the address bar.
+
+You should see a web page displaying the following text in bold and underlined:
+
+CA1 CLOUD ARCHITECTURE  
+SUCCESSFULLY COMPLETED BY ANGEL ILEOGBEN CA 1
+
+No manual configuration is required on the virtual machine because everything is set up automatically using the cloud-init file.
+
+When you are finished and want to delete the environment, return to PowerShell and run:
+
+./teardown.ps1
+
+This will remove the resource group and all resources created for this assignment.
