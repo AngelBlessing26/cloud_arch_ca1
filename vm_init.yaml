@@ -16,5 +16,5 @@ write_files:
       </body>
       </html>
 runcmd:
-  - systemctl enable nginx
-  - systemctl restart nginx
+  - systemctl enable apache2
+  - systemctl restart apache2
