@@ -1,3 +1,20 @@
-1. Run setup.ps1 to create Azure infrastructure
-2. VM will be configured using cloud-init
-3. Manual steps are listed here if required
+1. Ensure Azure CLI is installed and you are logged in:
+   az login
+
+2. Run the setup script:
+   ./setup.ps1
+
+3. Wait for the VM deployment to complete.
+
+4. Retrieve the public IP:
+   az vm show -d -g ca1_rg -n ca1VM --query publicIps -o tsv
+
+5. Open a browser and navigate to:
+   http://<public-ip>
+
+6. Confirm the webpage displays:
+   CA1 CLOUD ARCHITECTURE
+   SUCCESSFULLY COMPLETED BY ANGEL ILEOGBEN CA 1
+
+7. For teardown, run:
+   ./teardown.ps1
