@@ -1,1 +1,3 @@
-instructions.txt
+1. Run setup.ps1 to create Azure infrastructure
+2. VM will be configured using cloud-init
+3. Manual steps are listed here if required
